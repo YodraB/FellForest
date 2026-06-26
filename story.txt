@@ -1,0 +1,436 @@
+"Fell Forest" by Yodra
+
+Use American dialect.
+
+Use the serial comma.
+
+Release along with the "Vorple" interpreter.
+Release along with a file of "Atlan" called "Atlan.ttf".
+Release along with the style sheet "style.css".
+
+Include Vorple Screen Effects by Juhana Leinonen.
+Include Vorple Multimedia by Juhana Leinonen.
+Include Vorple Status Line by Juhana Leinonen.
+Include Quip-Based Conversation by Michael Martin.
+
+
+
+Release along with the file "assets/book.png".
+Release along with the file "assets/skull.png".
+Release along with the file "assets/brambleberries.png".
+Release along with the file "assets/rib-mushroom.png".
+Release along with the file "assets/skull-green-mushroom.png".
+Release along with the file "assets/skull-orange-mushroom.png".
+Release along with the file "assets/skull-purple-mushroom.png".
+Release along with the file "assets/clearing-yellow-flower.png".
+Release along with the file "assets/clearing-purple-flower.png".
+Release along with the file "assets/clearing-red-flower.png".
+
+
+When play begins:
+    preload image "assets/book.png";
+	preload image "assets/skull.png";
+	preload image "assets/brambleberries.png";
+	preload image "assets/rib-mushroom.png";
+	preload image "assets/skull-green-mushroom.png";
+	preload image "assets/skull-orange-mushroom.png";
+	preload image "assets/skull-purple-mushroom.png";
+	preload image "assets/clearing-yellow-flower.png";
+	preload image "assets/clearing-purple-flower.png";
+	preload image "assets/clearing-red-flower.png";
+
+
+When play begins:
+	construct the Vorple status line with 3 columns.
+
+The left hand Vorple status line is "Location: [the printed name of the location of the player]".
+The middle Vorple status line is "".
+The right hand Vorple status line is "".
+The mobile Vorple status line is "[left hand Vorple status line]".
+
+
+
+Atlan is a Vorple style.
+
+When play begins:
+	say "[atlan style]habida[end style][line break]"[hello];
+
+
+[for extensions see: https://intfiction.org/t/where-to-find-inform-7-extensions/41110]
+
+[see: https://intfiction.org/u/yodra/notifications/responses
+see: https://vorple-if.com/docs/localhost.html for how to set up a server
+see: https://vorple-if.com/docs/js-library.html for using alongside processing
+When the server is running (i.e., on desktop), visit http://localhost/Kaersian.materials/Release/play.html to see the game running.]
+
+
+
+
+[The prevailing wind is a direction variable. The prevailing wind is southwest. [variable declaration]]
+
+["Simon says, 'It's far too heavy to lift.'" produces: Simon says, "It's far too heavy to lift." [Quotes]]
+
+Book 1 - the World
+
+Part 1 - The Starting State
+
+Chapter 1 - Kinds
+
+An ingredient is a kind of thing. An ingredient has a thing called the ingredient source. An ingredient has a number called an amount. The amount of an ingredient is usually zero.
+
+A resource is a kind of thing. A resource has a thing called the pocket resource. The indefinite article of a resource is "some".
+
+Instead of taking a resource:
+	now the pocket resource of the noun is in the location;
+	try taking the pocket resource of the noun.
+
+Instead of taking an ingredient in the presence of the ingredient source of the noun:
+	increase the amount of the noun by one;
+	say "Taken.";
+	now the noun is carried by the player.
+
+Instead of dropping an ingredient in the presence of the ingredient source of the noun:
+	decrease the amount of the noun by one;
+	say "Dropped.";
+	if the amount of the noun is less than one:
+		now the noun is nowhere.
+
+A mushroom is a kind of ingredient.
+
+A flower is a kind of ingredient. 
+
+Chapter 2 - the Map
+
+Section 1 - the Start
+
+The start is a room. The printed name of the Start is "???" The description is "A grassy clearing, in the middle of a thick forest. Winding trails amongst the underbrush lead north and south."
+
+The recipe book is here. The printed name of the recipe book is "magical tome". Understand "book" and "tome" and "grimoire" and "volume" as the recipe book. The description of the recipe book is "A thick and heavy leatherbound tome. But when you look look inside, the pages are blank...".
+
+After examining the recipe book:
+	say "[paragraph break]";
+	place an image "assets/book.png" with the description "".
+
+The flower background is scenery in the start.
+
+Understand "flower" and "wildflower" and "bloom" and "flowers" and "wildflowers" and "blooms" as a the flower background when the location is the start.
+
+Instead of doing something to the flower background:
+	say "Which do you mean, the yellow flowers, the purple flowers, or the red flowers?".
+
+The pocket clearing yellow flower is a flower. The pocket clearing yellow flower is nowhere. The description is "[amount] simple yellow flower[s]." The printed name of the pocket clearing yellow flower is "simple yellow flower[s]". The indefinite article of the pocket clearing yellow flower is "[amount]".
+
+The resource clearing yellow flower is a resource. The resource clearing yellow flower is in the start. The description is "Bright, cheerful yellow blooms with delicate petals soft as velvet." The printed name of the resource clearing yellow flower is "scattering of yellow wildflowers". The indefinite article of the resource clearing yellow flower is "a". The pocket resource of the resource clearing yellow flower is the pocket clearing yellow flower.
+
+Understand "yellow" and "yellow flower" and "yellow flowers" and "yellow wildflower" and "yellow wildflowers" and "yellow bloom" and "yellow blooms" as the resource clearing yellow flower when the the location is the start.
+
+The ingredient source of the pocket clearing yellow flower is the resource clearing yellow flower.
+
+After examining the resource clearing yellow flower:
+	say "[line break]";
+	place an image "assets/clearing-yellow-flower.png" with the description "".
+
+After examining the pocket clearing yellow flower:
+	say "[line break]";
+	place an image "assets/clearing-yellow-flower.png" with the description "".
+
+The pocket clearing purple flower is a flower. The pocket clearing purple flower is nowhere. The description is "[amount] simple purple flower[s]." The printed name of the pocket clearing purple flower is "simple purple flower[s]". The indefinite article of the pocket clearing purple flower is "[amount]".
+
+The resource clearing purple flower is a resource. The resource clearing purple flower is in the start. The description is "Cool, moody purple blooms with delicate petals soft as velvet." The printed name of the resource clearing purple flower is "few purple wildflowers". The indefinite article of the resource clearing purple flower is "a". The pocket resource of the resource clearing purple flower is the pocket clearing purple flower.
+
+Understand "purple" and "purple flower" and "purple flowers" and "purple wildflower" and "purple wildflowers" and "purple bloom" and "purple blooms" as the resource clearing purple flower when the the location is the start.
+
+The ingredient source of the pocket clearing purple flower is the resource clearing purple flower.
+
+After examining the resource clearing purple flower:
+	say "[line break]";
+	place an image "assets/clearing-purple-flower.png" with the description "".
+
+After examining the pocket clearing purple flower:
+	say "[line break]";
+	place an image "assets/clearing-purple-flower.png" with the description "".
+
+The pocket clearing red flower is a flower. The pocket clearing red flower is nowhere. The description is "[amount] simple red flower[s]." The printed name of the pocket clearing red flower is "simple red flower[s]". The indefinite article of the pocket clearing red flower is "[amount]".
+
+The resource clearing red flower is a resource. The resource clearing red flower is in the start. The description is "Fiery, passionate red blooms with delicate petals soft as velvet." The printed name of the resource clearing red flower is "smattering of red wildflowers". The indefinite article of the resource clearing red flower is "a". The pocket resource of the resource clearing red flower is the pocket clearing red flower.
+
+Understand "red" and "red flower" and "red flowers" and "red wildflower" and "red wildflowers" and "red bloom" and "red blooms" as the resource clearing red flower when the the location is the start.
+
+The ingredient source of the pocket clearing red flower is the resource clearing red flower.
+
+After examining the resource clearing red flower:
+	say "[line break]";
+	place an image "assets/clearing-red-flower.png" with the description "".
+
+After examining the pocket clearing red flower:
+	say "[line break]";
+	place an image "assets/clearing-red-flower.png" with the description "".
+
+Section 2 - the Titan
+
+The titan is north of the start. The printed name of the titan is "The Skeleton of A Long-Dead Behemoth". The description of the titan is "Here, half-buried in the undergrowth, the bones of some collosal creature from times long past tower almost as high as the surrounding treetops." 
+
+The titan-skeleton is scenery in the titan. The printed name of the titan-skeleton is "titan". 
+
+Understand "titan" and "behemoth" and "skeleton" and "bones" as the titan-skeleton. 
+
+The description of the titan-skeleton is "Each bone is thicker around than one of your thighs, even at the narrowest. A massive rib cage forms a hollow space big enough to stand in if you duck, and a little ways away the huge, heavy skull sits mostly buried.[paragraph break]"
+
+A thing can be examined or not examined. A thing is usually not examined.
+
+Before examining something:
+	now the noun is examined.
+	
+After examining the titan-skeleton while the titan-skull is not examined:
+	say "[paragraph break]";
+	place an image "assets/skull.png" with the description "The skull looks like it might have come from some kind of titanic warthog?".
+
+The titan-skull is scenery in the titan. 
+
+Understand "skull" as the titan-skull when the location is the titan. The description is "Huge and half-buried, it sits as a sort of cave unto itself."
+
+After examining the titan-skull:
+	if the titan-skeleton is not examined or the titan-skeleton has been examined for three turns:
+		say "[paragraph break]";
+		place an image "assets/skull.png" with the description "The skull looks like it might have come from some kind of titanic warthog?".
+
+The titan-ribs is scenery in the titan. The description is "Each rib is a smooth curved column leading up to the remains of a spine, making a series of arches almost tall enough to stand upright within."
+
+Understand "examine rib" and "examine the rib" and "x rib" and "x the rib" and "examine ribs" and "examine the ribs" and "x ribs" and "x the ribs" and "examine ribcage" and "examine the ribcage" and "x ribcage" and "x the ribcage" as rib-examining when the location is the titan.
+
+Rib-examining is an action applying to nothing. 
+
+Carry out rib-examining:
+	say "[the description of the titan-ribs]".
+
+The titan-spine is scenery in the titan. The description is "There's not much left of the spine, just the parts fused to the ribcage."
+
+Understand "spine" as the titan-spine when the location is the titan.
+
+In-going is an action applying to nothing.
+
+Carry out in-going:
+	say "Do you mean 'go in the skull' or 'go in the ribcage'?".
+
+Understand "in" or "go in" as in-going when the location is the titan.
+
+Section 3 - the Rib-room
+
+The rib-room is a room. The printed name of the rib-room is "Under The Ribs of a Titan". The description of the rib-room is "You stand slightly hunched underneath the arches of the rib-cage. There's not much room to move around though; from here you can only really exit the ribcage."
+
+The pocket rib mushroom is a mushroom. The pocket rib mushroom is nowhere. The description is "These trumpet-like mushrooms are as white as the bone they grow from." The printed name of the pocket rib mushroom is "white mushrooms from the titan's ribcage". The indefinite article of the pocket rib mushroom is "[amount] handful[s] of".
+
+The resource rib mushroom is a resource. The resource rib mushroom is in the rib-room. The description is "These trumpet-like mushrooms are as white as the bone they grow from." The printed name of the resource rib mushroom is "white mushrooms". The pocket resource of the resource rib mushroom is the pocket rib mushroom. The indefinite article of the resource rib mushroom is "some".
+
+Understand "mushroom" or "mushrooms" as the resource rib mushroom while the location is the rib-room.
+
+The ingredient source of the pocket rib mushroom is the resource rib mushroom.
+
+After examining the resource rib mushroom:
+	say "[line break]";
+	place an image "assets/rib-mushroom.png" with the description "".
+
+After examining the pocket rib mushroom:
+	say "[line break]";
+	place an image "assets/rib-mushroom.png" with the description "".
+
+Instead of going nowhere in the rib-room:
+	say "(Exiting the ribcage)[line break]";
+	try rib-leaving.
+
+Rib-going is an action applying to nothing.
+
+Understand "go in rib" and "go in the rib" and "in rib" and "in the rib" and "go rib" and "go the rib" and "go in ribs" and "go in the ribs" and "in ribs" and "in the ribs" and "go ribs" and "go the ribs" and "go in ribcage" and "go in the ribcage" and "in ribcage" and "in the ribcage" and "go ribcage" and "go the ribcage" and "go in rib cage" and "go in the rib cage" and "in rib cage" and "in the rib cage" and "go rib cage" and "go the rib cage" as rib-going when the location is the titan.
+
+Carry out rib-going:
+	say "[line break]";
+	move the player to the rib-room.
+
+Rib-leaving is an action applying to nothing.
+
+Understand "out" and "go out" and "go outside" and "exit" and "exit rib" and "exit ribs" and "exit ribcage" and "exit rib cage" as rib-leaving when the location is the rib-room.
+
+Carry out rib-leaving:
+	say "(Exiting the ribcage)";
+	move the player to the titan.
+	
+Section 4 - the Skull-room
+
+The skull-room is a room. The printed name of the skull-room is "Within the Cavern of a Titan's Skull". The description of the skull-room is "The arch of the dome that once held this might creature's brain is surprisingly cosy, and the ground is carpeted in a variety of different mushrooms. However, much movement in any direction will take you outside again."
+
+The skull ground is scenery in the skull-room. The description is "A dense carpet of mushrooms from wall to wall... some green, some orange, even some purple ones!"
+
+Understand "mushrooms" as the skull ground when the location is the skull-room.
+
+The pocket skull green mushroom is a mushroom that is nowhere. The description is "Blue-green mushrooms with caps that open like an umbrella." The printed name of the pocket skull green mushroom is "green mushrooms from the titan's skull". The indefinite article of the pocket skull green mushroom is "[amount] handful[s] of".
+
+The resource skull green mushroom is a resource in the skull-room. The description is "Blue-green mushrooms with caps that open like an umbrella." The printed name of the resource skull green mushroom is "green mushrooms". The pocket resource of the resource skull green mushroom is the pocket skull green mushroom. The indefinite article of the resource skull green mushroom is "some".
+
+The ingredient source of the pocket skull green mushroom is the resource skull green mushroom.
+
+Understand "skull green mushroom" and "skull green mushrooms" and "green mushroom skull" and "green mushrooms skull" and "green mushroom from skull" and "green mushrooms from skull" and "green mushroom from titan skull" and "green mushrooms from titan skull" and "green mushroom from titan's skull" and "green mushrooms from titan's skull" and "green mushroom from the titan's skull" and "green mushrooms from the titan's skull" as the pocket skull green mushroom.
+
+Understand "green mushrooms" and "green mushroom" and "green" as the resource skull green mushroom while the location is the skull-room.
+
+After examining the resource skull green mushroom:
+	say "[paragraph break]";
+	place an image "assets/skull-green-mushroom.png" with the description "".
+
+After examining the pocket skull green mushroom:
+	say "[paragraph break]";
+	place an image "assets/skull-green-mushroom.png" with the description "".
+
+The pocket skull orange mushroom is a mushroom. The pocket skull orange mushroom is nowhere. The description is "Orange mushrooms with with a swirl like a cinnamon roll on the cap." The printed name of the pocket skull orange mushroom is "orange mushrooms from the titan's skull". The indefinite article of the pocket skull orange mushroom is "[amount] handful[s] of".
+
+The resource skull orange mushroom is a resource. The resource skull orange mushroom is in the skull-room. The description is "Orange mushrooms with with a swirl like a cinnamon roll on the cap." The printed name of the resource skull orange mushroom is "orange mushrooms". The pocket resource of the resource skull orange mushroom is the pocket skull orange mushroom. The indefinite article of the resource skull orange mushroom is "some".
+
+The ingredient source of the pocket skull orange mushroom is the resource skull orange mushroom.
+
+Understand "skull orange mushroom" and "skull orange mushrooms" and "orange mushroom skull" and "orange mushrooms skull" and "orange mushroom from skull" and "orange mushrooms from skull" and "orange mushroom from titan skull" and "orange mushrooms from titan skull" and "orange mushroom from titan's skull" and "orange mushrooms from titan's skull" and "orange mushroom from the titan's skull" and "orange mushrooms from the titan's skull" as the pocket skull orange mushroom.
+
+Understand "orange mushrooms" and "orange mushroom"  and "orange" as the resource skull orange mushroom while the location is the skull-room.
+
+After examining the resource skull orange mushroom:
+	say "[paragraph break]";
+	place an image "assets/skull-orange-mushroom.png" with the description "".
+
+After examining the pocket skull orange mushroom:
+	say "[paragraph break]";
+	place an image "assets/skull-orange-mushroom.png" with the description "".
+
+The pocket skull purple mushroom is a mushroom. The pocket skull purple mushroom is nowhere. The description is "Purple mushrooms with ribbed conical caps." The printed name of the pocket skull purple mushroom is "purple mushrooms from the titan's skull". The indefinite article of the pocket skull purple mushroom is "[amount] handful[s] of".
+
+The resource skull purple mushroom is a resource. The resource skull purple mushroom is in the skull-room. The description is "Purple mushrooms with ribbed conical caps." The printed name of the resource skull purple mushroom is "purple mushrooms". The pocket resource of the resource skull purple mushroom is the pocket skull purple mushroom. The indefinite article of the resource skull purple mushroom is "some".
+
+The ingredient source of the pocket skull purple mushroom is the resource skull purple mushroom.
+
+Understand "skull purple mushroom" and "skull purple mushrooms" and "purple mushroom skull" and "purple mushrooms skull" and "purple mushroom from skull" and "purple mushrooms from skull" and "purple mushroom from titan skull" and "purple mushrooms from titan skull" and "purple mushroom from titan's skull" and "purple mushrooms from titan's skull" and "purple mushroom from the titan's skull" and "purple mushrooms from the titan's skull" as the pocket skull purple mushroom.
+
+Understand "purple mushrooms" and "purple mushroom" and "purple" as the resource skull purple mushroom while the location is the skull-room.
+
+After examining the resource skull purple mushroom:
+	say "[paragraph break]";
+	place an image "assets/skull-purple-mushroom.png" with the description "".
+
+After examining the pocket skull purple mushroom:
+	say "[paragraph break]";
+	place an image "assets/skull-purple-mushroom.png" with the description "".
+
+Instead of going nowhere in the skull-room:
+	try skull-leaving.
+
+Skull-going is an action applying to nothing.
+
+Understand "go in skull" and "in skull" and "go in the skull" and "go skull"  and "go under skull" and "under skull" and "go under the skull" as skull-going when the location is the titan.
+
+Carry out skull-going:
+	say "[line break]";
+	move the player to the skull-room.
+
+Skull-fit is a text variable. Skull-fit is "yes".
+
+Instead of skull-going when skull-fit is "no":
+	say "It's a big skull, but not big enough for you to fit through the eye sockets! Only a cat or something smaller could manage...".
+
+Skull-leaving is an action applying to nothing.
+
+Understand "out" and "go out" and "go outside" and "exit" and "exit skull" as skull-leaving when the location is the skull-room.
+
+Carry out skull-leaving:
+	say "(Exiting the skull)[line break]";
+	move the player to the titan.
+
+Section 5 - the Brambles
+
+The brambles is south of the start. The printed name of the brambles is "A Patch of Thorny Brambles". The description of the brambles is "A patch of densely knotted pricker-studded bushes." 
+
+The bushes is scenery in the brambles. The description of the bushes is "A cluster of interwoven bushes with inch-long thorns glinting wickedly, ready to stick the unwary."
+
+Understand "brambles" as the bushes.
+
+The resource bramble berries is a resource in the brambles. The description of the resource bramble berries is "They're just ordinary-looking generic red berries. You'd bet they're sweet and juicy." The printed name of the resource bramble berries is "red berries".
+
+Understand "berry" and "berries" as the resource bramble berries while the location is the brambles.
+
+Bramble-immunity is a text variable. Bramble-immunity is "yes".
+
+Instead of taking the resource bramble berries when bramble-immunity is "no":
+	say "No way, you're not sticking your hand into that thicket of razors!"
+
+The pocket bramble berries is an ingredient. The pocket bramble berries are nowhere. The description is "They're just ordinary-looking generic red berries from the bramble patch." The printed name of the pocket bramble berries is "bramble berries". The ingredient source of the pocket bramble berries is the resource bramble berries. The indefinite article of the pocket bramble berries is "[amount of the noun] handful[s] of".
+
+The pocket resource of the resource bramble berries is the pocket bramble berries.
+
+After examining the resource bramble berries:
+	say "[line break]";
+	place an image "assets/brambleberries.png" with the description "".
+
+After examining the pocket bramble berries:
+	say "[line break]";
+	place an image "assets/brambleberries.png" with the description "".
+
+Chapter 2 - the Intro
+
+Instead of looking the first time: 
+	say "Where is this?[paragraph break][emphasized font style]Type 'look' and hit enter to begin.[end style]";
+
+Before looking in the start for the second time:
+	now the printed name of the Start is "A Clearing";
+
+Instead of looking in the start for the second time: 
+	say "Looking around, you find yourself in unfamilliar surroundings... in a small, verdant clearing in the midst of what seems to be a thick forest.[paragraph break]On the ground a little ways away sits a thick and heavy tome, seemingly ancient.";
+	place an image "assets/book.png" with the description "";
+	say "[emphasized font style]Now try 'take book' or 'examine book'...[end style]".
+
+Tome-touched is a text variable. Tome-touched is "no".
+
+Instead of examining the recipe book while tome-touched is "no":
+	say "[the description of the recipe book][paragraph break]";
+	say "Touching it feels like it gives you a minor but not painful electric shock... a tingling like energy racing over your skin.";
+	say "[paragraph break][emphasized font style]You can tell this game to do most basic actions you can think of. Structure them as (verb) or (verb)(noun).[paragraph break] When you're ready to leave, winding trails amongst the underbrush lead north and south from here...[end style][paragraph break]";
+	now tome-touched is "yes".
+
+After doing something to the recipe book while tome-touched is "no":
+	say "Touching the cover of the book feels like it gives you a minor but not painful electric shock... a tingling like energy racing over your skin.";
+	say "[paragraph break][emphasized font style]You can tell this game to do most basic actions you can think of. Structure them as (verb) or (verb)(noun).[paragraph break] When you're ready to leave, winding trails amongst the underbrush lead north and south from here...[end style][paragraph break]";
+	now tome-touched is "yes".
+
+After taking an ingredient for the first time:
+	say "You can type 'inventory' or just 'i' to see a list of what you're carrying."
+
+Book 2 - Conversation
+
+The greeting of yourself is selftalk.
+Understand "yourself" as yourself.
+
+[NPC is a man in the Start. The litany of NPC is Table of NPC Comments. The indefinite article of NPC is "some". The printed name of NPC is "some guy". Understand "guy" as NPC.]
+
+Table of NPC Comments
+prompt	response	enabled
+"'Who are you?'"	who-am-I	1
+"Say nothing"	sigh	1
+"'Hello then, generic NPC.'"	hello	0
+"Show them the object" 	point-to-object	0
+
+Table of Quip Texts (continued)
+quip	quiptext
+selftalk	"'Talking to yourself is boring...'"
+who-am-I	"'I'm a generic NPC!'"
+sigh	"I sigh gustily"
+hello	"'Hello yourself!'"
+point-to-object	"Yup, that sure is a thing."
+
+After quipping when the current quip is who-am-I:
+	enable the hello quip.
+
+After quipping when the current quip is sigh:
+	enable the sigh quip.
+
+[Before taking the generic-object: 
+	enable the point-to-object quip;
+	say "Huh, a thingamajig...".
+]
+
+Book 3 - not for release
+
+Test all with "look / take book / go north"
