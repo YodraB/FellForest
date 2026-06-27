@@ -74,7 +74,7 @@ Book 1 - the World
 
 Part 1 - The Starting State
 
-Chapter 1 - Kinds
+Chapter 1 - Kinds and Potions
 
 An ingredient is a kind of thing. An ingredient has a thing called the ingredient source. An ingredient has a number called an amount. The amount of an ingredient is usually zero.
 
@@ -95,9 +95,47 @@ Instead of dropping an ingredient in the presence of the ingredient source of th
 	if the amount of the noun is less than one:
 		now the noun is nowhere.
 
+A potion is a kind of thing. A potion has a number called an amount. The amount of a potion is usually 0. The indefinite article of a potion is "[amount]". A potion is always edible.
+
+The generic potion is a potion that is nowhere. The printed name of the generic potion is "generic potion[s]".
+
+Current brew is a list of things that varies.
+
+Creating a brew is an action applying to nothing. 
+
+Understand "brew" as creating a brew.
+
+Carry out creating a brew:
+	say "You've begun a new potion...";
+	now the current brew is { }.
+
+Adding to a brew is an action applying to one carried thing. 
+
+Understand "add [something]" as adding to a brew.
+
+Carry out adding to a brew:
+	if the number of entries of the current brew is less than two:
+		if the noun is not listed in the current brew:
+			add the noun to the current brew;
+			decrease the amount of the noun by one;
+			say "Added.";
+			say "Now your brew contains [the current brew].";
+			if the amount of the noun is less than one:
+				now the noun is nowhere;
+		otherwise:
+			say "Your potion already has [the noun] in it!";
+	otherwise:
+		say "Your potion is complete! You've gained a generic potion!";
+		increase the amount of the generic potion by one;
+		now the current brew is { };
+		if the player is not carrying the generic potion:
+			now the player is carrying the generic potion;
+
 A mushroom is a kind of ingredient.
 
 A flower is a kind of ingredient. 
+
+
 
 Chapter 2 - the Map
 
@@ -357,7 +395,7 @@ Bramble-immunity is a text variable. Bramble-immunity is "yes".
 Instead of taking the resource bramble berries when bramble-immunity is "no":
 	say "No way, you're not sticking your hand into that thicket of razors!"
 
-The pocket bramble berries is an ingredient. The pocket bramble berries are nowhere. The description is "They're just ordinary-looking generic red berries from the bramble patch." The printed name of the pocket bramble berries is "bramble berries". The ingredient source of the pocket bramble berries is the resource bramble berries. The indefinite article of the pocket bramble berries is "[amount of the noun] handful[s] of".
+The pocket bramble berries is an ingredient. The pocket bramble berries are nowhere. The description is "They're just ordinary-looking generic red berries from the bramble patch." The printed name of the pocket bramble berries is "bramble berries". The ingredient source of the pocket bramble berries is the resource bramble berries. The indefinite article of the pocket bramble berries is "[amount] handful[s] of".
 
 The pocket resource of the resource bramble berries is the pocket bramble berries.
 
